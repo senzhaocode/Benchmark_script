@@ -13,3 +13,12 @@ The scripts and tools used for benchmarking evalutation of three germline varian
    * [Java SE Development Kit 8](https://www.oracle.com/java/technologies/javase/javase-jdk8-downloads.html)
    * [GATK v4.1.0.0](https://gatk.broadinstitute.org/hc/en-us)
 
+2. DeepVariant pipeline dependencies:
+
+   * [DeepVariant v0.7.2](https://github.com/google/deepvariant)
+   * [Singularity v(>2.6.1)](https://github.com/hpcng/singularity)
+   
+3. [DRAGEN platform v3.3.11](https://emea.support.illumina.com/sequencing/sequencing_software/dragen-bio-it-platform/downloads.html) 
+
+## Running pipeline
+
