@@ -8,11 +8,11 @@ The scripts and tools used for benchmarking evalutation of three germline varian
   
   1. GATK pipeline dependencies:
   
-  [BWA v0.7.17](https://github.com/lh3/bwa)
+    [BWA v0.7.17](https://github.com/lh3/bwa)
   
-  [python2 v(>=2.7.15)](https://www.python.org/downloads/)
+    [python2 v(>=2.7.15)](https://www.python.org/downloads/)
   
-  [Java SE Development Kit 8](https://www.oracle.com/java/technologies/javase/javase-jdk8-downloads.html)
+    [Java SE Development Kit 8](https://www.oracle.com/java/technologies/javase/javase-jdk8-downloads.html)
   
-  [GATK v4.1.0.0](https://gatk.broadinstitute.org/hc/en-us)
+    [GATK v4.1.0.0](https://gatk.broadinstitute.org/hc/en-us)
 
