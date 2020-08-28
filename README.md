@@ -6,8 +6,8 @@ The scripts and tools used for benchmarking evalutation of three germline varian
 
 ## Requirements:
   
-  1. GATK pipeline dependencies:
-  
+ 1. GATK pipeline dependencies:
+ 
    [BWA v0.7.17](https://github.com/lh3/bwa)
   
    [python2 v(>=2.7.15)](https://www.python.org/downloads/)
