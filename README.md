@@ -33,17 +33,28 @@ The scripts and tools used for benchmarking evalutation of three germline varian
 
 ## Variants calling via pipelines
 
-1. GATK running
+1. GATK running, e.g. GiaB NA12878 sample
 
 ```bash
+# Upstream analysis from fastq to BAM
 bash GATK_upstream.sh \
   "/cluster/projects/p21/Projects/BigMed_WGS_benchmark_data" \ # Input fastq directory
-  "cluster/projects/p21/Projects/BigMed_WGS_benchmark_output" \ # Output directory (as input directory of downstream script)
+  "/cluster/projects/p21/Projects/BigMed_WGS_benchmark_output" \ # Output directory (as input directory of downstream script)
   "HG001-NA12878-50x" \ # sample name of fastq file
   "AHLLWWBBXX" \ # flow cell name of fastq file
   "/cluster/projects/p21/Analysis/For_benchmarking/references" \ # directory of genome reference, annotation and index files
   64 \ # number of cores allocated
   128 # RAM size allocated (Gb)
+  
+# Downstream analysis from BAM to VCF
+bash GATK_downstream.sh \
+  "/cluster/projects/p21/Projects/BigMed_WGS_benchmark_output" \ # Input BAM directory (also as Output path)
+  "HG001-NA12878-50x" \ # sample name of fastq file
+  "/cluster/projects/p21/Analysis/For_benchmarking/references" \ # directory of genome reference, annotation and index files
+  64 \ # number of cores allocated
+  128 # RAM size allocated (Gb)
 ```
+
+1.2 DRAGEN running, e.g. GiaB NA12878 sample
 
 
