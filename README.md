@@ -4,7 +4,7 @@ Introduction
 ------------
 The scripts and tools used for benchmarking evalutation of three germline variants calling pipelines ([GATK](https://gatk.broadinstitute.org/hc/en-us), [DRAGEN](https://www.illumina.com/products/by-type/informatics-products/dragen-bio-it-platform.html) and [DeepVariant](https://github.com/google/deepvariant)) in the paper [Zhao *et al.* 2020. *BioRxiv*. Accuracy and efficiency of germline variant calling pipelines for human genome data](https://www.biorxiv.org/content/10.1101/2020.03.27.011767v1)
 
-## Requirements:
+# Requirements:
   
 1. GATK pipeline dependencies:
  
@@ -21,10 +21,13 @@ The scripts and tools used for benchmarking evalutation of three germline varian
    
 3. [DRAGEN platform v3.3.11](https://emea.support.illumina.com/sequencing/sequencing_software/dragen-bio-it-platform/downloads.html) 
 
-## Sources of WGS data downloading:
+# Sources of WGS data downloading:
 
 1. GiaB NA12878 (HG001) - [PrecisionFDA](https://precision.fda.gov/challenges/truth) and [SRR6794144](https://trace.ncbi.nlm.nih.gov/Traces/sra/?run=SRR6794144)
 
 2. “Synthetic-diploid” WGS data - [ERR1341793](https://www.ebi.ac.uk/ena/browser/view/ERR1341793) and [ERR1341796](https://www.ebi.ac.uk/ena/browser/view/ERR1341796)
+
+3. Simulated WGS data - in silico reads were synthesized using the tool [NeatGenReads](https://github.com/zstephens/neat-genreads), and available on request.
+
 
 
