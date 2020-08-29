@@ -16,9 +16,15 @@ The scripts and tools used for benchmarking evalutation of three germline varian
 2. DeepVariant pipeline dependencies:
 
    * [DeepVariant v0.7.2](https://github.com/google/deepvariant)
+   * [GNU Parallel](https://www.gnu.org/software/parallel/)
    * [Singularity v(>2.6.1)](https://github.com/hpcng/singularity)
    
 3. [DRAGEN platform v3.3.11](https://emea.support.illumina.com/sequencing/sequencing_software/dragen-bio-it-platform/downloads.html) 
 
-## Running pipeline
+## Sources of WGS data downloading:
+
+1. GiaB NA12878 (HG001) - [PrecisionFDA](https://precision.fda.gov/challenges/truth) and [SRR6794144](https://trace.ncbi.nlm.nih.gov/Traces/sra/?run=SRR6794144)
+
+2. “Synthetic-diploid” WGS data - [ERR1341793](https://www.ebi.ac.uk/ena/browser/view/ERR1341793) and [ERR1341796](https://www.ebi.ac.uk/ena/browser/view/ERR1341796)
+
 
