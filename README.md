@@ -21,6 +21,8 @@ The scripts and tools used for benchmarking evalutation of three germline varian
    
 3. [DRAGEN platform v3.3.11](https://emea.support.illumina.com/sequencing/sequencing_software/dragen-bio-it-platform/downloads.html) 
 
+4. Genome reference, annotation and index files ([b37](https://gatk.broadinstitute.org/hc/en-us/articles/360035890811-Resource-bundle))
+
 ## Sources of WGS data downloading:
 
 1. GiaB NA12878 (HG001) - [PrecisionFDA](https://precision.fda.gov/challenges/truth) and [SRR6794144](https://trace.ncbi.nlm.nih.gov/Traces/sra/?run=SRR6794144)
