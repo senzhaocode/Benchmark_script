@@ -39,22 +39,53 @@ The scripts and tools used for benchmarking evalutation of three germline varian
 # Upstream analysis from fastq to BAM
 bash GATK_upstream.sh \
   "/cluster/projects/p21/Projects/BigMed_WGS_benchmark_data" \ # Input fastq directory
-  "/cluster/projects/p21/Projects/BigMed_WGS_benchmark_output" \ # Output directory (as input directory of downstream script)
+  "/cluster/projects/p21/Analysis/GATK/BigMed_WGS_benchmark_output" \ # Output directory (as input directory of downstream script)
   "HG001-NA12878-50x" \ # sample name of fastq file
   "AHLLWWBBXX" \ # flow cell name of fastq file
-  "/cluster/projects/p21/Analysis/For_benchmarking/references" \ # directory of genome reference, annotation and index files
+  "/cluster/projects/p21/Projects/references" \ # directory of genome reference, annotation and index files
   64 \ # number of cores allocated
   128 # RAM size allocated (Gb)
   
 # Downstream analysis from BAM to VCF
 bash GATK_downstream.sh \
-  "/cluster/projects/p21/Projects/BigMed_WGS_benchmark_output" \ # Input BAM directory (also as Output path)
+  "/cluster/projects/p21/Analysis/GATK/BigMed_WGS_benchmark_output" \ # Input BAM directory (also as Output path)
   "HG001-NA12878-50x" \ # sample name of fastq file
-  "/cluster/projects/p21/Analysis/For_benchmarking/references" \ # directory of genome reference, annotation and index files
+  "/cluster/projects/p21/Projects/references" \ # directory of genome reference, annotation and index files
   64 \ # number of cores allocated
   128 # RAM size allocated (Gb)
 ```
 
-1.2 DRAGEN running, e.g. GiaB NA12878 sample
+2. DRAGEN running, e.g. GiaB NA12878 sample
 
+```bash
+# Upstream analysis from fastq to BAM
+bash Dragen_upstream.sh \
+  "/cluster/projects/p21/Projects/BigMed_WGS_benchmark_data" \ # Input fastq directory
+  "HG001-NA12878-50x" \ # sample name of fastq file
+  "AHLLWWBBXX" \ # flow cell name of fastq file
+  "/cluster/projects/p21/Analysis/DRAGEN/BigMed_WGS_benchmark_output" \ # Output directory (as input directory of downstream script)
+  "/cluster/projects/p21/Projects/dragen_v3" \ # Directory of reference hash table built for DRAGEN
+  "/cluster/projects/p21/Projects/references" # directory of genome reference, annotation and index files
+  
+# Downstream analysis from BAM to VCF
+bash Dragen_downstream.sh \
+  "/cluster/projects/p21/Analysis/DRAGEN/BigMed_WGS_benchmark_output" \ # Input BAM directory (also as Output path)
+  "HG001-NA12878-50x" \ # sample name of fastq file
+  "/cluster/projects/p21/Projects/dragen_v3" \ # Directory of reference hash table built for DRAGEN
+  "/cluster/projects/p21/Projects/references" # directory of genome reference, annotation and index files
+```
 
+3. DeepVariant running, e.g. GiaB NA12878 sample
+
+```bash
+# Downstream analysis from BAM to fastq
+bash DL_downstream.sh \
+  "/cluster" \ # '/cluster' directory on the host system is binded and mounted to the directory inside of container (users have to change it for their own host)
+  "projects/p21/Analysis/GATK/BigMed_WGS_benchmark_output/BAM/HG001-NA12878-50x_final.bam" \ # relative path of input BAM file generated from GATK upstream
+  "projects/p21/Analysis/DL/BigMed_WGS_benchmark_output" \ # relative path of output directory
+  "HG001-NA12878-50x" \ # sample name of fastq file
+  "/cluster/projects/p21/Projects/DL_container/deepvariant_container.sqsh" \ # full path of DeepVariant Singularity container image file
+  "projects/p21/Projects/references/human_g1k_v37_decoy.fasta" \ # relative path of genome reference sequence
+  "projects/p21/Projects/DL_container/model.ckpt" \ # relative path of deep learning model used by Deepvariant
+  60 # number of cores allocated
+```
