@@ -81,7 +81,7 @@ bash Dragen_downstream.sh \
 # Downstream analysis from BAM to fastq
 bash DL_downstream.sh \
   "/cluster" \ # '/cluster' directory on the host system is binded and mounted to the directory inside of container (users have to change it for their own host)
-  "projects/p21/Analysis/GATK/BigMed_WGS_benchmark_output/BAM/HG001-NA12878-50x_final.bam" \ # relative path of input BAM file generated from GATK upstream
+  "projects/p21/Analysis/GATK/BigMed_WGS_benchmark_output/BAM/HG001-NA12878-50x_final.bam" \ # relative path of input BAM file generated from GATK upstream analysis
   "projects/p21/Analysis/DL/BigMed_WGS_benchmark_output" \ # relative path of output directory
   "HG001-NA12878-50x" \ # sample name of fastq file
   "/cluster/projects/p21/Projects/DL_container/deepvariant_container.sqsh" \ # full path of DeepVariant Singularity container image file
