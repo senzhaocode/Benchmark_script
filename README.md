@@ -35,4 +35,15 @@ The scripts and tools used for benchmarking evalutation of three germline varian
 
 1. GATK running
 
+```bash
+bash GATK_upstream.sh \
+  "/cluster/projects/p21/Projects/BigMed_WGS_benchmark_data" \ # Input fastq directory
+  "cluster/projects/p21/Projects/BigMed_WGS_benchmark_output" \ # Output directory (as input directory of downstream script)
+  "HG001-NA12878-50x" \ # sample name of fastq file
+  "AHLLWWBBXX" \ # flow cell name of fastq file
+  "/cluster/projects/p21/Analysis/For_benchmarking/references" \ # directory of genome reference, annotation and index files
+  64 \ # number of cores allocated
+  128 # RAM size allocated (Gb)
+```
+
 
